@@ -2,6 +2,7 @@
 ADMIN_LOGIN = "1"
 USER_LOGIN = "2"
 ADMIN_LOGOUT = "3"
+USER_LOGOUT = "4"
 MAX_LOGIN_ATTEMPTS = 3
 LOCKED_ACCOUNT_MESSAGE = "Account locked. Too many unsuccessful login attempts."
 MAX_DEPOSIT_LIMIT_USER = 100000
@@ -11,11 +12,11 @@ MAX_WITHDRAW_LIMIT_USER = 50000
 
 # User details dictionary
 users = {
-    "user1": {"name": "User1", "password": "pass1", "balance": 5000, "login_attempts": 0, "locked": False},
-    "user2": {"name": "User2", "password": "pass2", "balance": 5000, "login_attempts": 0, "locked": False},
-    "user3": {"name": "User3", "password": "pass3", "balance": 5000, "login_attempts": 0, "locked": False},
-    "user4": {"name": "User4", "password": "pass4", "balance": 5000, "login_attempts": 0, "locked": False},
-    "user5": {"name": "User5", "password": "pass5", "balance": 5000, "login_attempts": 0, "locked": False}
+    "user1": {"name": "user1", "password": "pass1", "balance": 5000, "login_attempts": 0, "locked": False},
+    "user2": {"name": "user2", "password": "pass2", "balance": 5000, "login_attempts": 0, "locked": False},
+    "user3": {"name": "user3", "password": "pass3", "balance": 5000, "login_attempts": 0, "locked": False},
+    "user4": {"name": "user4", "password": "pass4", "balance": 5000, "login_attempts": 0, "locked": False},
+    "user5": {"name": "user5", "password": "pass5", "balance": 5000, "login_attempts": 0, "locked": False}
 }
 
 # Admin details
@@ -119,7 +120,7 @@ def user_menu(userid):
         print("1. Deposit Cash")
         print("2. Withdraw Cash")
         print("3. Check Balance")
-        print(f"{ADMIN_LOGOUT}. Logout")
+        print(f"{USER_LOGOUT}. Logout")
 
         choice = input("\nEnter your choice: ")
 
@@ -134,7 +135,7 @@ def user_menu(userid):
         elif choice == "3":
             check_balance(userid)
 
-        elif choice == ADMIN_LOGOUT:
+        elif choice == USER_LOGOUT:
             break
 
         else:
